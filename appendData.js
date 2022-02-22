@@ -1,8 +1,10 @@
 
-function displayData(Data,parent)
+function displayData(Data,parent,)
 {
+    let x="daily"
     parent.innerText=""
     Data.map((ele)=>{
+        console.log(x)
         let div=document.createElement("div");
         let image=document.createElement("img");
         image.src=ele.img;
@@ -24,11 +26,13 @@ function displayData(Data,parent)
         let combine2=document.createElement("div");
         combine2.setAttribute("class","end_div");
         let price=document.createElement("span");
-        price.innerText=`RS ${ele.daily}`;
+        price.innerText=`RS ${ele[x]}`;
         let btn=document.createElement("button");
         btn.innerText="BOOK NOW";
         btn.addEventListener("click",()=>{
-            localStorage.setItem("cart_Data",JSON.stringify(ele));
+            let arr=[]
+            arr.push(ele)
+            localStorage.setItem("cart_Data",JSON.stringify(arr));
         })
         combine2.append(price,btn);
         div.append(combine,name,combine1,combine2);
