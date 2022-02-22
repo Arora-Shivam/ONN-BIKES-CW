@@ -1,0 +1,48 @@
+#main_container{
+    display: flex;
+    justify-content: space-between;
+}
+#fliter_div{
+    width: 20%;
+    border: solid;
+}
+#product_container{
+width: 80%;
+border: solid;
+display: grid;
+grid-template-columns:repeat(4,1fr) ;
+grid-gap: 40px;
+}
+#product_container>div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.img_div{
+    display: flex;
+
+}
+.img_div img{
+    width: 80%;
+}
+.tag_div{
+    margin-top: 10px;
+    width: 50px;
+    height: 30px;
+    align-items: center;
+    text-align:center ;
+    font-size: large;
+    display: inline-block;
+    background-color: green;
+}
+.end_div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.km_div{
+    display: flex;
+    justify-content: space-evenly;
+}
