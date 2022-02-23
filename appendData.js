@@ -1,7 +1,8 @@
 
-function displayData(Data,parent,)
+function displayData(Data,parent,empty)
 {
     let x="daily"
+    if (empty==true)
     parent.innerText=""
     Data.map((ele)=>{
         console.log(x)

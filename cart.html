@@ -5,10 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
+<link rel="stylesheet" href="./cart.css">
 <body>
-    <div id="cart_container">
-        
+    <div id="main_div_cart">
+        <div id="cart_container">
+        </div>
+        <div id="pricing_div">
+        </div>
     </div>
+    
 </body>
 </html>
+<script type="module">
+    import displayData from "./appendData.js"
+    let parent_div=document.getElementById("cart_container")
+    let cart_Data=JSON.parse(localStorage.getItem("cart_Data"))||[];
+    console.log(cart_Data);
+    displayData(cart_Data,parent_div)
+</script>
