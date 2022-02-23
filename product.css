@@ -1,48 +1,70 @@
-#main_container{
+#main_container,.end_div,#product_container>div,.img_div{
     display: flex;
     justify-content: space-between;
 }
 #fliter_div{
-    width: 20%;
-    border: solid;
+    width: 15%;
+    padding-left: 1%;
+    height: 500px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 #product_container{
 width: 80%;
-border: solid;
 display: grid;
 grid-template-columns:repeat(4,1fr) ;
 grid-gap: 40px;
 }
 #product_container>div{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding: 10px 25px;
 }
-
-.img_div{
-    display: flex;
-
+#product_container>div:hover{
+    border: solid rgb(189, 178, 178);
 }
 .img_div img{
-    width: 80%;
+    width: 100%;
 }
 .tag_div{
     margin-top: 10px;
-    width: 50px;
-    height: 30px;
-    align-items: center;
+    height: 20px;
+    padding: 5px 10px;
     text-align:center ;
     font-size: large;
     display: inline-block;
-    background-color: green;
+    background-color: #2dc484;
 }
-.end_div{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10px;
+.end_div span{
+    padding: 15px;
+    font-size: x-large;
+    box-shadow: rgba(153, 149, 149, 0.45) 0px 25px 20px -20px;
+}
+.end_div button{
+    padding: 20px;
+    font-size: large;
+    border: 0ch;
+    background-color: rgb(11, 11, 63);
+    color: white;
 }
 .km_div{
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.km_div span{
+    margin-right: 10px;
+    font-size: large;
+    color: gray;
+}
+#manufacturer,#model,#vehecal_type{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 20px;
+    margin-left:2%;
+    height: 90px;
+    overflow-y: scroll;
+    margin-right: 5px;
+    text-transform: capitalize;
+    }
+#manufacturer div,#model div,#vehecal_type div{
+    margin-bottom: 10px;
 }

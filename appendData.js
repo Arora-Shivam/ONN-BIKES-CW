@@ -8,19 +8,21 @@ function displayData(Data,parent,)
         let div=document.createElement("div");
         let image=document.createElement("img");
         image.src=ele.img;
+        let imgdiv=document.createElement("div")
+        imgdiv.append(image)
         let tag=document.createElement("div");
-        tag.innerText=ele.count+"left";
+        tag.innerText=`${ele.count}+Left`;
         tag.setAttribute("class","tag_div");
         let combine=document.createElement("div")
-        combine.append(image,tag)
+        combine.append(imgdiv,tag)
         combine.setAttribute("class","img_div")
-        let name=document.createElement("h4");
+        let name=document.createElement("h3");
         name.innerText=`${ele.comp_name} ${ele.name}`;
         let combine1=document.createElement("div");
         let range=document.createElement("span");
-        range.innerText=ele.range;
+        range.innerText=`Free ${ele.range}`;
         let excess=document.createElement("span");
-        excess.innerText=ele.excess;
+        excess.innerText=`Excess ${ele.excess}`;
         combine1.append(range,excess);
         combine1.setAttribute("class","km_div");
         let combine2=document.createElement("div");
