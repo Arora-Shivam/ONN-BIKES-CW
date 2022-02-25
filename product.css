@@ -11,6 +11,8 @@
 }
 #product_container{
 width: 80%;
+height: 700px;
+overflow-y: scroll;
 display: grid;
 grid-template-columns:repeat(4,1fr) ;
 grid-gap: 20px;
@@ -19,6 +21,7 @@ grid-gap: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     flex-direction: column;
     padding: 10px 15px;
+    max-height:300px;
 }
 #product_container>div:hover{
     border: 1px solid rgb(189, 178, 178);
@@ -41,7 +44,7 @@ grid-gap: 20px;
 }
 .end_div span{
     padding: 5px;
-    font-size: x-large;
+    font-size:1.5vw;
     box-shadow: rgba(44, 43, 43, 0.45) 0px 25px 20px -20px;
 }
 .end_div button{
@@ -69,4 +72,26 @@ grid-gap: 20px;
     }
 #manufacturer div,#model1 div,#vehecal_type div{
     margin-bottom: 10px;
+}
+#modal_div{
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    text-align: center;
+}
+#modal_div>div{
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-radius: 10px;
+}
+#modal_div>div>button{
+    background-color: #00b468;
+    padding: 5px;
+    border: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

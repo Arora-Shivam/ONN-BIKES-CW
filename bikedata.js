@@ -88,7 +88,7 @@ function DetailData()
         },
         
         {
-            img:"https://cdn.shopify.com/s/files/1/0579/3287/3884/products/pulsar-rs200_480x480.png?v=1643197249",
+            img:"https://images.carandbike.com/bike-images/large/hero/splendor-plus/hero-splendor-plus.webp?v=6",
             comp_name:"Hero", 
             range:"270 Km",
             excess:"RS 2/km",
