@@ -7,28 +7,22 @@ console.log(Data)
 displayData(Data,parent,true)
 let elements=document.getElementsByClassName("checked_value");
 console.log(elements)
-let arr=[];
 for (let i=0;i<elements.length;i++)
 {
-    elements[i].addEventListener("click",function ()
-    {
-        filterfunction(element[i].value);
-    });
+    elements[i].addEventListener("click",filterfunction);
 }
 import filter_data from "./filter.js";
 let count=0;
-function filterfunction(index)
+function filterfunction()
 { count++;
-    console.log(index);
     console.log(count)
     let flag;
-    
-    if (count==1&&)
+    if (count==1)
     {
          flag=true;
     }
     else
-    flag=false;
+    flag==false;
     let filter_value;
     for (let i=0;i<elements.length;i++)
     {
@@ -42,14 +36,3 @@ function filterfunction(index)
     displayData(res,parent,flag)
 }
 
-
-
-
-
-
-
-
-let arr1=[]
-let arr=[1,2,2,3,4,5,9]
-console.log(arr[i])
-arr1.push(arr[index])

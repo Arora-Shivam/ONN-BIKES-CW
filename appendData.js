@@ -17,7 +17,7 @@ function displayData(Data,parent,empty)
         let combine=document.createElement("div")
         combine.append(imgdiv,tag)
         combine.setAttribute("class","img_div")
-        let name=document.createElement("h3");
+        let name=document.createElement("h5");
         name.innerText=`${ele.comp_name} ${ele.name}`;
         let combine1=document.createElement("div");
         let range=document.createElement("span");
@@ -32,6 +32,8 @@ function displayData(Data,parent,empty)
         price.innerText=`RS ${ele[x]}`;
         let btn=document.createElement("button");
         btn.innerText="BOOK NOW";
+        btn.setAttribute("data-bs-toggle","modal");
+        btn.setAttribute("data-bs-target","#exampleModal")
         btn.addEventListener("click",()=>{
             let arr=[]
             arr.push(ele)

@@ -27,7 +27,7 @@ grid-gap: 40px;
 }
 .tag_div{
     margin-top: 10px;
-    height: 20px;
+    height: 35px;
     padding: 5px 10px;
     text-align:center ;
     font-size: large;
@@ -35,12 +35,12 @@ grid-gap: 40px;
     background-color: #2dc484;
 }
 .end_div span{
-    padding: 15px;
+    padding: 10px;
     font-size: x-large;
     box-shadow: rgba(153, 149, 149, 0.45) 0px 25px 20px -20px;
 }
 .end_div button{
-    padding: 20px;
+    padding: 10px;
     font-size: large;
     border: 0ch;
     background-color: rgb(11, 11, 63);
@@ -58,7 +58,7 @@ grid-gap: 40px;
 #manufacturer,#model,#vehecal_type{
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 15px;
     margin-left:2%;
     height: 90px;
     overflow-y: scroll;
