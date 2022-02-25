@@ -17,7 +17,7 @@ function displayData(Data,parent,empty)
         let combine=document.createElement("div")
         combine.append(imgdiv,tag)
         combine.setAttribute("class","img_div")
-        let name=document.createElement("h5");
+        let name=document.createElement("h6");
         name.innerText=`${ele.comp_name} ${ele.name}`;
         let combine1=document.createElement("div");
         let range=document.createElement("span");
