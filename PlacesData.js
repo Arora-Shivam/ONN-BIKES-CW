@@ -16,6 +16,14 @@ var places=[
         city:"GURUGRAM",
         stop1:"BIKE SURGEON",
         stop1_landmark:"Gurucharan palace",
+        stop2:"DC Motors,",
+        stop2_landmark:"Sector-118",
+        stop3:"Bike Hub",
+        stop3_landmark:"Nana Nani Park",
+        stop4:"Link Road",
+        stop4_landmark:"Ram Mandir Palam Vihar",
+        stop5:"Dharam Colony.",
+        stop5_landmark:"Ashok Vihar Phase III Extension"
     },
     {
         city:"HYDERABAD",
@@ -47,7 +55,15 @@ var places=[
         city:"AHMEDABAD",
         stop1:"VERMA MOTORS",
         stop1_landmark:"SECTOR-32",
-    },
+        stop2:"Unity Statue,",
+        stop2_landmark:"Unity Garden",
+        stop3:"Gandhigram",
+        stop3_landmark:"Ganhi Asharam",
+        stop4:"Vechicle Hub",
+        stop4_landmark:"Asarva",
+        stop5:"JAGATPURA ROAD",
+        stop5_landmark:"MANSAROVAR- SHIPRA PATH"
+    }
     
 ]
 
