@@ -1,6 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#main_container,.end_div,#product_container>div,.img_div{
+    display: flex;
+    justify-content: space-between;
+}
+#fliter_div{
+    width: 15%;
+    padding-left: 1%;
+    height: 500px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+#product_container{
+width: 80%;
+display: grid;
+grid-template-columns:repeat(4,1fr) ;
+grid-gap: 40px;
+}
+#product_container>div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    flex-direction: column;
+    padding: 10px 25px;
+}
+#product_container>div:hover{
+    border: solid rgb(189, 178, 178);
+}
+.img_div img{
+    width: 100%;
+}
+.tag_div{
+    margin-top: 10px;
+    height: 20px;
+    padding: 5px 10px;
+    text-align:center ;
+    font-size: large;
+    display: inline-block;
+    background-color: #2dc484;
+}
+.end_div span{
+    padding: 15px;
+    font-size: x-large;
+    box-shadow: rgba(153, 149, 149, 0.45) 0px 25px 20px -20px;
+}
+.end_div button{
+    padding: 20px;
+    font-size: large;
+    border: 0ch;
+    background-color: rgb(11, 11, 63);
+    color: white;
+}
+.km_div{
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.km_div span{
+    margin-right: 10px;
+    font-size: large;
+    color: gray;
+}
+#manufacturer,#model,#vehecal_type{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-left:2%;
+    height: 90px;
+    overflow-y: scroll;
+    margin-right: 5px;
+    text-transform: capitalize;
+    }
+#manufacturer div,#model div,#vehecal_type div{
+    margin-bottom: 10px;
+}
+	</style>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
+</head>
+<body>
+    <div id="main_container">
+       <div id="fliter_div"><h2>FILTER</h2>
+           <div> <h3>MANUFACTURER</h3>
+               <div id="manufacturer">
+                
+                    <div><input type="checkbox" class="checked_value" value="Suzuki">Suzuki </div>
+                    <div><input type="checkbox" class="checked_value" value="Honda">Honda </div>          
+                    <div><input type="checkbox" class="checked_value" value="Hero">Hero</div>
+                    <div><input type="checkbox" class="checked_value" value="TVS">TVS </div>
+                    <div><input type="checkbox" class="checked_value" value="KTM">KTM </div>
+                    <div><input type="checkbox" class="checked_value" value="Bajaj">Bajaj</div>      
+                    <div><input type="checkbox" class="checked_value" value="Royal Enfield">Royal Enfield</div>
+                </div>
+            </div>
+           <div><h3>MODEL</h3>
+               <div id="model">
+                    <div><input type="checkbox" class="checked_value" value="Pulsar"> Pulsar</div>
+                    <div><input type="checkbox" class="checked_value" value="Activa 125"> Activa </div>  
+                    <div><input type="checkbox" class="checked_value" value="Avenger"> Avenger</div>
+               </div>
+           </div>
+           <div>
+               <h3>VEHECAL TYPE</h3>
+               <div id="vehecal_type">
+                    <div><input type="checkbox" class="checked_value" value="Moped"> scooter</div>
+                    <div><input type="checkbox" class="checked_value" value="Bike"> Motorcycle</div>
+               </div>
+           </div>
+       </div> 
+    <div id="product_container">
 
-let Data=[
+    </div>
+</div>
+</body>
+</html>
+<script type="module" src="./product.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+	
+
+let DataP=[
 {
     img:"https://images.carandbike.com/bike-images/large/bajaj/avenger-cruise-220/bajaj-avenger-cruise-220.jpg?v=11",
     comp_name:"Bajaj", 
@@ -402,5 +531,124 @@ let Data=[
 },
 ]
 
-localStorage.setItem("product_Data",JSON.stringify(Data));
-console.log(Data.length);
+localStorage.setItem("product_Data",JSON.stringify(DataP));
+let parent=document.getElementById("product_container");
+let Data=JSON.parse(localStorage.getItem("product_Data"));
+// console.log(Data)
+displayData(Data,parent,true)
+let elements=document.getElementsByClassName("checked_value");
+// console.log(elements)
+let arr=[];
+for (let i=0;i<elements.length;i++)
+{
+    elements[i].addEventListener("click",function ()
+    {
+        filterfunction();
+    });
+}
+
+function filterfunction()
+{ 
+
+    let filter_data=[];
+
+    for(let i=0;i<Data.length;i++){
+    	if(elements[0].checked && elements[0].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[1].checked&& elements[1].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[2].checked&& elements[2].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[3].checked&& elements[3].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[4].checked&& elements[4].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[5].checked&& elements[5].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[6].checked&& elements[6].value==Data[i].comp_name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[7].checked&& elements[7].value==Data[i].name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[8].checked&& elements[8].value==Data[i].name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[9].checked&& elements[9].value==Data[i].name){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[10].checked&& elements[10].value==Data[i].type){
+    		filter_data.push(Data[i])
+    	}
+    	else if(elements[11].checked&& elements[11].value==Data[i].type){
+    		filter_data.push(Data[i])
+    	}
+    }    
+    console.log(filter_data)
+    if(filter_data.length==0){
+    	filter_data=DataP;
+    }
+    filter_data.sort(function (a,b){
+    	return a.daily -b.daily;
+    })
+
+    console.log(filter_data)
+    displayData(filter_data,parent)
+}
+
+
+
+
+
+
+
+
+function displayData(Data,parent)
+{
+	Data.sort(function (a,b){
+    	return a.daily -b.daily;
+    })
+    parent.innerText=""
+    Data.map((ele)=>{
+        let div=document.createElement("div");
+        let image=document.createElement("img");
+        image.src=ele.img;
+        let tag=document.createElement("div");
+        tag.innerText=ele.count+"left";
+        tag.setAttribute("class","tag_div");
+        let combine=document.createElement("div")
+        combine.append(image,tag)
+        combine.setAttribute("class","img_div")
+        let name=document.createElement("h4");
+        name.innerText=`${ele.comp_name} ${ele.name}`;
+        let combine1=document.createElement("div");
+        let range=document.createElement("span");
+        range.innerText=ele.range;
+        let excess=document.createElement("span");
+        excess.innerText=ele.excess;
+        combine1.append(range,excess);
+        combine1.setAttribute("class","km_div");
+        let combine2=document.createElement("div");
+        combine2.setAttribute("class","end_div");
+        let price=document.createElement("span");
+        price.innerText=`RS ${ele.daily}`;
+        let btn=document.createElement("button");
+        btn.innerText="BOOK NOW";
+        btn.addEventListener("click",()=>{
+            localStorage.setItem("cart_Data",JSON.stringify(ele));
+        })
+        combine2.append(price,btn);
+        div.append(combine,name,combine1,combine2);
+        parent.append(div);
+    })
+}
+
+
+
+</script>
